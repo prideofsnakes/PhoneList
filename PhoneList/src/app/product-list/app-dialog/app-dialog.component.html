@@ -1,0 +1,15 @@
+
+<h1 mat-dialog-title>Добавить в корзину</h1><button class="close" mat-button (click)="onNoClick()">X</button>
+
+<div mat-dialog-content>
+  <img [attr.src]="product[this.index].icon" alt="Undefined"><br>
+  <a>{{ product[this.index].name }}</a><br>
+  <mat-form-field>
+    Количество: <input type ="number" matInput [(ngModel)]="this.quantity">
+  </mat-form-field>
+  <p>${{ product[this.index].price * this.quantity}}</p>
+</div>
+<div mat-dialog-actions>
+  
+  <button mat-button (click) = "addToCart(product, this.quantity)" cdkFocusInitial>Добавить</button>
+</div>

@@ -1,0 +1,7 @@
+<div class='cart-item' *ngFor="let item of wishList; let i = index;">
+  <img [src]="item.icon" alt="1"><br>
+  <span>{{item.name}}  стоит   
+  ${{item.price}} за шт.</span><br>
+  <button mat-button >Добавить в корзину</button>
+  <button mat-button (click) = "itemDelete(i)">Удалить товар</button>
+</div>

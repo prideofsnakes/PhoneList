@@ -1,0 +1,53 @@
+
+<h3>Корзина</h3>
+
+
+<div class='cart-item' *ngFor="let item of items; let i = index;">
+  <img [src]="item.icon" alt="1"><br>
+  <span>{{item.name}}  стоит   
+  ${{item.price}} за шт.</span><br>
+  Количество: <input type ="number" width="25px" [(ngModel)]="item.factor">
+  <button mat-button (click) = "itemDelete(index)">Удалить товар</button>
+</div>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label for="name">
+      ФИО
+    </label><br>
+    <input  id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="phone">
+      Телефон
+    </label><br>
+    <input  id="phone" type="text" formControlName="phone">
+  </div>
+ 
+ <div>
+    <label for="email">
+      E-mail
+    </label><br>
+    <input  id="email" type="text" formControlName="email">
+  </div>
+
+   <div>
+    <label  for="delAddress">
+      Адрес доставки
+    </label><br>
+    <input id="delAddress" type="text" formControlName="delAddress">
+  </div>
+
+   <div>
+    <label for="comment">
+      Комментарий
+    </label><br>
+    <textarea  id="comment" type="textarea" cols="40" rows="6" formControlName="comment"></textarea>
+  </div>
+  <button mat-button class="button" type="submit">Сделать заказ</button>
+
+</form>
+<button mat-button (click)="clear()">Очистить корзину</button>
+<p *ngIf="orderData">{{orderData | json}}</p>
+<p *ngIf="orderItems">{{orderItems | json}}</p>
