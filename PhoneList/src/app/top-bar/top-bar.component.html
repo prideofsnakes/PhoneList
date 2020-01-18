@@ -1,0 +1,25 @@
+
+<nav>
+<nav>
+
+<a class="main" [routerLink]="['/']">
+	<h1>Главная</h1>
+</a>
+
+<a [routerLink]="['/cart']"><h1>Корзина</h1></a>
+</nav>
+<app-wishmenu></app-wishmenu>
+<section>
+
+<i class="material-icons">shopping_cart</i>
+<div class="text">
+В корзине сейчас: {{getLength()}} товаров<br>
+На сумму: ${{getSumPrices()}}
+</div> 
+</section>
+</nav>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

@@ -1,0 +1,6 @@
+.cart-item {
+	margin-top: 10px;
+}
+input.ng-invalid{
+ border-color: red;
+}
