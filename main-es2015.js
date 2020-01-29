@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<h3>Корзина</h3>\n\n\n<div class='cart-item' *ngFor=\"let item of items; let i = index;\">\n  <img [src]=\"item.icon\" alt=\"1\"><br>\n  <span>{{item.name}}  стоит   \n  ${{item.price}} за шт.</span><br>\n  Количество: <input type =\"number\" width=\"25px\" [(ngModel)]=\"item.factor\">\n  <button mat-button (click) = \"itemDelete(index)\">Удалить товар</button>\n</div>\n<form [formGroup]=\"checkoutForm\" (ngSubmit)=\"onSubmit(checkoutForm.value)\">\n\n  <div>\n    <label for=\"name\">\n      ФИО\n    </label><br>\n    <input  id=\"name\" type=\"text\" formControlName=\"name\">\n  </div>\n\n  <div>\n    <label for=\"phone\">\n      Телефон\n    </label><br>\n    <input  id=\"phone\" type=\"text\" formControlName=\"phone\">\n  </div>\n \n <div>\n    <label for=\"email\">\n      E-mail\n    </label><br>\n    <input  id=\"email\" type=\"text\" formControlName=\"email\">\n  </div>\n\n   <div>\n    <label  for=\"delAddress\">\n      Адрес доставки\n    </label><br>\n    <input id=\"delAddress\" type=\"text\" formControlName=\"delAddress\">\n  </div>\n\n   <div>\n    <label for=\"comment\">\n      Комментарий\n    </label><br>\n    <textarea  id=\"comment\" type=\"textarea\" cols=\"40\" rows=\"6\" formControlName=\"comment\"></textarea>\n  </div>\n  <button mat-button class=\"button\" type=\"submit\">Сделать заказ</button>\n\n</form>\n<button mat-button (click)=\"clear()\">Очистить корзину</button>\n<p *ngIf=\"orderData\">{{orderData | json}}</p>\n<p *ngIf=\"orderItems\">{{orderItems | json}}</p>");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<h3>Корзина</h3>\n\n\n<div class='cart-item' *ngFor=\"let item of items; let i = index;\">\n  <img [src]=\"item.icon\" alt=\"1\"><br>\n  <span>{{item.name}}  стоит   \n  ${{item.price}} за шт.</span><br>\n  Количество: <input type =\"number\" width=\"25px\" [(ngModel)]=\"item.factor\">\n  <button mat-button (click) = \"itemDelete(index)\">Удалить товар</button>\n</div>\n<form [formGroup]=\"checkoutForm\" (ngSubmit)=\"onSubmit(checkoutForm.value)\">\n\n  <div>\n    <label for=\"name\">\n      ФИО\n    </label><br>\n    <input  id=\"name\" type=\"text\" formControlName=\"name\">\n  </div>\n\n  <div>\n    <label for=\"phone\">\n      Телефон\n    </label><br>\n    <input  id=\"phone\" type=\"text\" formControlName=\"phone\">\n  </div>\n \n <div>\n    <label for=\"email\">\n      E-mail\n    </label><br>\n    <input  id=\"email\" type=\"text\" formControlName=\"email\">\n  </div>\n\n   <div>\n    <label  for=\"delAddress\">\n      Адрес доставки\n    </label><br>\n    <input id=\"delAddress\" type=\"text\" formControlName=\"delAddress\">\n  </div>\n\n   <div>\n    <label for=\"comment\">\n      Комментарий\n    </label><br>\n    <textarea  id=\"comment\" type=\"textarea\" cols=\"40\" rows=\"6\" formControlName=\"comment\"></textarea>\n  </div>\n  <button mat-button class=\"button\" type=\"submit\">Сделать заказ</button>\n\n</form>\n<button mat-button (click)=\"clear()\">Очистить корзину</button>\n<p *ngIf=\"orderData\">{{order | json}}</p>\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<h1 mat-dialog-title>Добавить в корзину</h1><button class=\"close\" mat-button (click)=\"onNoClick()\">X</button>\n\n<div mat-dialog-content>\n  <img [attr.src]=\"product[this.index].icon\" alt=\"Undefined\"><br>\n  <a>{{ product[this.index].name }}</a><br>\n  <mat-form-field>\n    Количество: <input type =\"number\" matInput [(ngModel)]=\"this.quantity\">\n  </mat-form-field>\n  <p>${{ product[this.index].price * this.quantity}}</p>\n</div>\n<div mat-dialog-actions>\n  \n  <button mat-button (click) = \"addToCart(product, this.quantity)\" cdkFocusInitial>Добавить</button>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<h1 mat-dialog-title>Добавить в корзину</h1><button class=\"close\" mat-button (click)=\"onNoClick()\">X</button>\n\n<div mat-dialog-content>\n  <img [attr.src]=\"product[this.index].icon\" alt=\"Undefined\"><br>\n  <a>{{ product[this.index].name }}</a><br>\n  <mat-form-field>\n    Количество: <input type =\"number\" matInput [(ngModel)]=\"this.quantity\">\n  </mat-form-field>\n  <p>${{ product[this.index].price * this.quantity}}</p>\n</div>\n<div mat-dialog-actions>\n  \n  <button mat-button (click) = \"addToCart(product, this.quantity, this.index)\" cdkFocusInitial>Добавить</button>\n</div>\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class='cart-item' *ngFor=\"let item of wishList; let i = index;\">\n  <img [src]=\"item.icon\" alt=\"1\"><br>\n  <span>{{item.name}}  стоит   \n  ${{item.price}} за шт.</span><br>\n  <button mat-button >Добавить в корзину</button>\n  <button mat-button (click) = \"itemDelete(i)\">Удалить товар</button>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class='cart-item' *ngFor=\"let item of wishList; let i = index;\">\n  <img [src]=\"item.icon\" alt=\"1\"><br>\n  <span>{{item.name}}  стоит   \n  ${{item.price}} за шт.</span><br>\n  <button mat-button (click) = \"openDialog(item['nativeIndex'])\">Добавить в корзину</button>\n  <button mat-button (click) = \"itemDelete(i)\">Удалить товар</button>\n</div>\n");
 
 /***/ }),
 
@@ -571,8 +571,9 @@ let CartPageComponent = class CartPageComponent {
         }
         console.warn('Your order has been submitted', customerData);
         this.orderItems = {};
-        this.items.forEach((item, index, arr) => this.orderItems["Товар " + index] = item);
+        this.items.forEach((item, index, arr) => this.orderItems["Товар " + (index + 1)] = item);
         this.orderData = customerData;
+        this.order = Object.assign(this.orderData, this.orderItems);
         this.items = this.cartService.clearCart();
         this.checkoutForm.reset();
     }
@@ -620,11 +621,10 @@ let CartService = class CartService {
     constructor() {
         this.items = [];
         this.wishItems = [];
-        this.cartItemIndex = 0;
     }
-    addToCart(product, quantity) {
-        product[this.cartItemIndex].factor = quantity;
-        this.items.push(product[this.cartItemIndex]);
+    addToCart(product, quantity, index) {
+        product[index].factor = quantity;
+        this.items.push(product[index]);
     }
     clearCart() {
         this.items = [];
@@ -689,7 +689,7 @@ let AppDialogComponent = class AppDialogComponent {
         this.data = data;
         this.service = service;
         this.product = _products__WEBPACK_IMPORTED_MODULE_4__["products"];
-        this.index = this.service.cartItemIndex;
+        this.index = this.data.index;
         this.quantity = 1;
     }
     onNoClick() {
@@ -697,14 +697,14 @@ let AppDialogComponent = class AppDialogComponent {
     }
     ngOnInit() {
     }
-    addToCart(product, quantity) {
-        this.service.addToCart(product, quantity);
+    addToCart(product, quantity, index) {
+        this.service.addToCart(product, quantity, index);
         this.dialogRef.close();
     }
 };
 AppDialogComponent.ctorParameters = () => [
     { type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"] },
-    { type: _cart_service__WEBPACK_IMPORTED_MODULE_3__["CartService"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] },
     { type: _cart_service__WEBPACK_IMPORTED_MODULE_3__["CartService"] }
 ];
 AppDialogComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -779,10 +779,9 @@ let ProductListComponent = class ProductListComponent {
         });
     }
     openDialog(i) {
-        this.cartService.cartItemIndex = i;
         const dialogRef = this.dialog.open(_app_dialog_app_dialog_component__WEBPACK_IMPORTED_MODULE_5__["AppDialogComponent"], {
             width: '320px',
-            data: { color: this.color }
+            data: { index: i }
         });
         dialogRef.afterClosed().subscribe(res => {
             this.color = res;
@@ -791,9 +790,7 @@ let ProductListComponent = class ProductListComponent {
     addToWishlist(i) {
         let date = new Date();
         _products__WEBPACK_IMPORTED_MODULE_3__["products"][i]["addDate"] = date.toLocaleString("en-US", this.options);
-        if (this.cartService.wishItems.length == 5) {
-            this.cartService.wishItems.pop();
-        }
+        _products__WEBPACK_IMPORTED_MODULE_3__["products"][i]["nativeIndex"] = i;
         this.cartService.wishItems.unshift(_products__WEBPACK_IMPORTED_MODULE_3__["products"][i]);
     }
 };
@@ -1085,12 +1082,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _cart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../cart.service */ "./src/app/cart.service.ts");
+/* harmony import */ var _product_list_app_dialog_app_dialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../product-list/app-dialog/app-dialog.component */ "./src/app/product-list/app-dialog/app-dialog.component.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+
+
 
 
 
 let WishlistComponent = class WishlistComponent {
-    constructor(service) {
+    constructor(service, dialog) {
         this.service = service;
+        this.dialog = dialog;
         this.wishList = this.service.wishItems;
     }
     ngOnInit() {
@@ -1098,9 +1100,17 @@ let WishlistComponent = class WishlistComponent {
     itemDelete(i) {
         this.service.delElementWishlist(i);
     }
+    openDialog(i) {
+        const dialogRef = this.dialog.open(_product_list_app_dialog_app_dialog_component__WEBPACK_IMPORTED_MODULE_3__["AppDialogComponent"], {
+            width: '320px',
+            data: { index: i }
+        });
+        dialogRef.afterClosed().subscribe(res => { });
+    }
 };
 WishlistComponent.ctorParameters = () => [
-    { type: _cart_service__WEBPACK_IMPORTED_MODULE_2__["CartService"] }
+    { type: _cart_service__WEBPACK_IMPORTED_MODULE_2__["CartService"] },
+    { type: _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"] }
 ];
 WishlistComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
