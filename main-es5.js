@@ -1213,8 +1213,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CartService, [{
         key: "addToCart",
         value: function addToCart(product, quantity, index) {
-          product[index].factor = quantity;
-          this.items.push(product[index]);
+          var elementInCart = this.items.indexOf(product[index]);
+          if (elementInCart != -1) this.items[elementInCart].factor += quantity;else {
+            product[index].factor = quantity;
+            this.items.push(product[index]);
+          }
         }
       }, {
         key: "clearCart",
