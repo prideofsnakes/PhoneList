@@ -71,7 +71,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n<h3>Корзина</h3>\n\n\n<div class='cart-item' *ngFor=\"let item of items; let i = index;\">\n  <img [src]=\"item.icon\" alt=\"1\"><br>\n  <span>{{item.name}}  стоит   \n  ${{item.price}} за шт.</span><br>\n  Количество: <input type =\"number\" width=\"25px\" [(ngModel)]=\"item.factor\">\n  <button mat-button (click) = \"itemDelete(index)\">Удалить товар</button>\n</div>\n<form [formGroup]=\"checkoutForm\" (ngSubmit)=\"onSubmit(checkoutForm.value)\">\n\n  <div>\n    <label for=\"name\">\n      ФИО\n    </label><br>\n    <input  id=\"name\" type=\"text\" formControlName=\"name\">\n  </div>\n\n  <div>\n    <label for=\"phone\">\n      Телефон\n    </label><br>\n    <input  id=\"phone\" type=\"text\" formControlName=\"phone\">\n  </div>\n \n <div>\n    <label for=\"email\">\n      E-mail\n    </label><br>\n    <input  id=\"email\" type=\"text\" formControlName=\"email\">\n  </div>\n\n   <div>\n    <label  for=\"delAddress\">\n      Адрес доставки\n    </label><br>\n    <input id=\"delAddress\" type=\"text\" formControlName=\"delAddress\">\n  </div>\n\n   <div>\n    <label for=\"comment\">\n      Комментарий\n    </label><br>\n    <textarea  id=\"comment\" type=\"textarea\" cols=\"40\" rows=\"6\" formControlName=\"comment\"></textarea>\n  </div>\n  <button mat-button class=\"button\" type=\"submit\">Сделать заказ</button>\n\n</form>\n<button mat-button (click)=\"clear()\">Очистить корзину</button>\n<p *ngIf=\"orderData\">{{order | json}}</p>\n";
+    __webpack_exports__["default"] = "\n<h3>Корзина</h3>\n\n\n<div class='cart-item' *ngFor=\"let item of items; let i = index;\">\n  <img [src]=\"item.icon\" alt=\"1\"><br>\n  <span>{{item.name}}  стоит   \n  ${{item.price}} за шт.</span><br>\n  Количество: <input type =\"number\" width=\"25px\" [(ngModel)]=\"item.factor\">\n  <button mat-button (click) = \"itemDelete(index)\">Удалить товар</button>\n</div>\n<form [formGroup]=\"checkoutForm\" (ngSubmit)=\"onSubmit(checkoutForm.value)\">\n\n  <div>\n    <label for=\"name\">\n      ФИО\n    </label><br>\n    <input  id=\"name\" type=\"text\" formControlName=\"name\">\n  </div>\n\n  <div>\n    <label for=\"phone\">\n      Телефон\n    </label><br>\n    <input  id=\"phone\" type=\"text\" formControlName=\"phone\">\n  </div>\n \n <div>\n    <label for=\"email\">\n      E-mail\n    </label><br>\n    <input  id=\"email\" type=\"text\" formControlName=\"email\">\n  </div>\n\n   <div>\n    <label  for=\"delAddress\">\n      Адрес доставки\n    </label><br>\n    <input id=\"delAddress\" type=\"text\" formControlName=\"delAddress\">\n  </div>\n\n   <div>\n    <label for=\"comment\">\n      Комментарий\n    </label><br>\n    <textarea  id=\"comment\" type=\"textarea\" cols=\"40\" rows=\"6\" formControlName=\"comment\"></textarea>\n  </div>\n  <button mat-button class=\"button\" type=\"submit\">Сделать заказ</button>\n\n</form>\n<button mat-button (click)=\"clear()\">Очистить корзину</button>\n<p *ngIf=\"orderData\">{{orderData | json}}</p>\n<p *ngIf=\"orderItems\">{{orderItems | json}}</p>";
     /***/
   },
 
@@ -91,7 +91,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n<h1 mat-dialog-title>Добавить в корзину</h1><button class=\"close\" mat-button (click)=\"onNoClick()\">X</button>\n\n<div mat-dialog-content>\n  <img [attr.src]=\"product[this.index].icon\" alt=\"Undefined\"><br>\n  <a>{{ product[this.index].name }}</a><br>\n  <mat-form-field>\n    Количество: <input type =\"number\" matInput [(ngModel)]=\"this.quantity\">\n  </mat-form-field>\n  <p>${{ product[this.index].price * this.quantity}}</p>\n</div>\n<div mat-dialog-actions>\n  \n  <button mat-button (click) = \"addToCart(product, this.quantity, this.index)\" cdkFocusInitial>Добавить</button>\n</div>\n";
+    __webpack_exports__["default"] = "\n<h1 mat-dialog-title>Добавить в корзину</h1><button class=\"close\" mat-button (click)=\"onNoClick()\">X</button>\n\n<div mat-dialog-content>\n  <img [attr.src]=\"product[this.index].icon\" alt=\"Undefined\"><br>\n  <a>{{ product[this.index].name }}</a><br>\n  <mat-form-field>\n    Количество: <input type =\"number\" matInput [(ngModel)]=\"this.quantity\">\n  </mat-form-field>\n  <p>${{ product[this.index].price * this.quantity}}</p>\n</div>\n<div mat-dialog-actions>\n  \n  <button mat-button (click) = \"addToCart(product, this.quantity)\" cdkFocusInitial>Добавить</button>\n</div>\n";
     /***/
   },
 
@@ -191,7 +191,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class='cart-item' *ngFor=\"let item of wishList; let i = index;\">\n  <img [src]=\"item.icon\" alt=\"1\"><br>\n  <span>{{item.name}}  стоит   \n  ${{item.price}} за шт.</span><br>\n  <button mat-button (click) = \"openDialog(item['nativeIndex'])\">Добавить в корзину</button>\n  <button mat-button (click) = \"itemDelete(i)\">Удалить товар</button>\n</div>\n";
+    __webpack_exports__["default"] = "<div class='cart-item' *ngFor=\"let item of wishList; let i = index;\">\n  <img [src]=\"item.icon\" alt=\"1\"><br>\n  <span>{{item.name}}  стоит   \n  ${{item.price}} за шт.</span><br>\n  <button mat-button >Добавить в корзину</button>\n  <button mat-button (click) = \"itemDelete(i)\">Удалить товар</button>\n</div>\n";
     /***/
   },
 
@@ -1121,10 +1121,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           console.warn('Your order has been submitted', customerData);
           this.orderItems = {};
           this.items.forEach(function (item, index, arr) {
-            return _this.orderItems["Товар " + (index + 1)] = item;
+            return _this.orderItems["Товар " + index] = item;
           });
           this.orderData = customerData;
-          this.order = Object.assign(this.orderData, this.orderItems);
           this.items = this.cartService.clearCart();
           this.checkoutForm.reset();
         }
@@ -1208,16 +1207,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.items = [];
         this.wishItems = [];
+        this.cartItemIndex = 0;
       }
 
       _createClass(CartService, [{
         key: "addToCart",
-        value: function addToCart(product, quantity, index) {
-          var elementInCart = this.items.indexOf(product[index]);
-          if (elementInCart != -1) this.items[elementInCart].factor += quantity;else {
-            product[index].factor = quantity;
-            this.items.push(product[index]);
-          }
+        value: function addToCart(product, quantity) {
+          product[this.cartItemIndex].factor = quantity;
+          this.items.push(product[this.cartItemIndex]);
         }
       }, {
         key: "clearCart",
@@ -1331,7 +1328,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.data = data;
         this.service = service;
         this.product = _products__WEBPACK_IMPORTED_MODULE_4__["products"];
-        this.index = this.data.index;
+        this.index = this.service.cartItemIndex;
         this.quantity = 1;
       }
 
@@ -1345,8 +1342,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnInit() {}
       }, {
         key: "addToCart",
-        value: function addToCart(product, quantity, index) {
-          this.service.addToCart(product, quantity, index);
+        value: function addToCart(product, quantity) {
+          this.service.addToCart(product, quantity);
           this.dialogRef.close();
         }
       }]);
@@ -1358,7 +1355,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return [{
         type: _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"]
       }, {
-        type: undefined,
+        type: _cart_service__WEBPACK_IMPORTED_MODULE_3__["CartService"],
         decorators: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
           args: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]]
@@ -1497,10 +1494,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function openDialog(i) {
           var _this3 = this;
 
+          this.cartService.cartItemIndex = i;
           var dialogRef = this.dialog.open(_app_dialog_app_dialog_component__WEBPACK_IMPORTED_MODULE_5__["AppDialogComponent"], {
             width: '320px',
             data: {
-              index: i
+              color: this.color
             }
           });
           dialogRef.afterClosed().subscribe(function (res) {
@@ -1512,7 +1510,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function addToWishlist(i) {
           var date = new Date();
           _products__WEBPACK_IMPORTED_MODULE_3__["products"][i]["addDate"] = date.toLocaleString("en-US", this.options);
-          _products__WEBPACK_IMPORTED_MODULE_3__["products"][i]["nativeIndex"] = i;
+
+          if (this.cartService.wishItems.length == 5) {
+            this.cartService.wishItems.pop();
+          }
+
           this.cartService.wishItems.unshift(_products__WEBPACK_IMPORTED_MODULE_3__["products"][i]);
         }
       }]);
@@ -1660,48 +1662,48 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var products = [{
       name: "Nokia 3300",
       price: 1000,
-      icon: "assets/images/20030720-nokia3300.jpg",
-      preview: 'assets/images/20030720-nokia3300.JkMn7.jpg'
+      icon: "../../assets/images/20030720-nokia3300.jpg",
+      preview: '../assets/images/20030720-nokia3300.JkMn7.jpg'
     }, {
       name: "Nokia 3300S",
       price: 2000,
-      icon: "assets/images/20030720-nokia3300.jpg",
-      preview: 'assets/images/20030720-nokia3300.JkMn7.jpg'
+      icon: "../../assets/images/20030720-nokia3300.jpg",
+      preview: '../assets/images/20030720-nokia3300.JkMn7.jpg'
     }, {
       name: "Nokia 3300SV",
       price: 3000,
-      icon: "assets/images/20030720-nokia3300.jpg",
-      preview: 'assets/images/20030720-nokia3300.JkMn7.jpg'
+      icon: "../../assets/images/20030720-nokia3300.jpg",
+      preview: '../assets/images/20030720-nokia3300.JkMn7.jpg'
     }, {
       name: "Nokia 3300",
       price: 1000,
-      icon: "assets/images/20030720-nokia3300.jpg",
-      preview: 'assets/images/20030720-nokia3300.JkMn7.jpg'
+      icon: "../../assets/images/20030720-nokia3300.jpg",
+      preview: '../assets/images/20030720-nokia3300.JkMn7.jpg'
     }, {
       name: "Nokia 3300S",
       price: 2000,
-      icon: "assets/images/20030720-nokia3300.jpg",
-      preview: 'assets/images/20030720-nokia3300.JkMn7.jpg'
+      icon: "../../assets/images/20030720-nokia3300.jpg",
+      preview: '../assets/images/20030720-nokia3300.JkMn7.jpg'
     }, {
       name: "Nokia 3300SV",
       price: 3000,
-      icon: "assets/images/20030720-nokia3300.jpg",
-      preview: 'assets/images/20030720-nokia3300.JkMn7.jpg'
+      icon: "../../assets/images/20030720-nokia3300.jpg",
+      preview: '../assets/images/20030720-nokia3300.JkMn7.jpg'
     }, {
       name: "Nokia 3300",
       price: 1000,
-      icon: "assets/images/20030720-nokia3300.jpg",
-      preview: 'assets/images/20030720-nokia3300.JkMn7.jpg'
+      icon: "../../assets/images/20030720-nokia3300.jpg",
+      preview: '../assets/images/20030720-nokia3300.JkMn7.jpg'
     }, {
       name: "Nokia 3300S",
       price: 2000,
-      icon: "assets/images/20030720-nokia3300.jpg",
-      preview: 'assets/images/20030720-nokia3300.JkMn7.jpg'
+      icon: "../../assets/images/20030720-nokia3300.jpg",
+      preview: '../assets/images/20030720-nokia3300.JkMn7.jpg'
     }, {
       name: "Nokia 3300SV",
       price: 3000,
-      icon: "assets/images/20030720-nokia3300.jpg",
-      preview: 'assets/images/20030720-nokia3300.JkMn7.jpg'
+      icon: "../../assets/images/20030720-nokia3300.jpg",
+      preview: '../assets/images/20030720-nokia3300.JkMn7.jpg'
     }];
     /*
     Copyright Google LLC. All Rights Reserved.
@@ -1983,27 +1985,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _cart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ../cart.service */
     "./src/app/cart.service.ts");
-    /* harmony import */
-
-
-    var _product_list_app_dialog_app_dialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../product-list/app-dialog/app-dialog.component */
-    "./src/app/product-list/app-dialog/app-dialog.component.ts");
-    /* harmony import */
-
-
-    var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! @angular/material */
-    "./node_modules/@angular/material/esm2015/material.js");
 
     var WishlistComponent =
     /*#__PURE__*/
     function () {
-      function WishlistComponent(service, dialog) {
+      function WishlistComponent(service) {
         _classCallCheck(this, WishlistComponent);
 
         this.service = service;
-        this.dialog = dialog;
         this.wishList = this.service.wishItems;
       }
 
@@ -2015,17 +2004,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function itemDelete(i) {
           this.service.delElementWishlist(i);
         }
-      }, {
-        key: "openDialog",
-        value: function openDialog(i) {
-          var dialogRef = this.dialog.open(_product_list_app_dialog_app_dialog_component__WEBPACK_IMPORTED_MODULE_3__["AppDialogComponent"], {
-            width: '320px',
-            data: {
-              index: i
-            }
-          });
-          dialogRef.afterClosed().subscribe(function (res) {});
-        }
       }]);
 
       return WishlistComponent;
@@ -2034,8 +2012,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     WishlistComponent.ctorParameters = function () {
       return [{
         type: _cart_service__WEBPACK_IMPORTED_MODULE_2__["CartService"]
-      }, {
-        type: _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]
       }];
     };
 
