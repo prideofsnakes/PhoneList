@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit {
   });
   }
 
-   color: string;
+  
 
   openDialog(i): void {
     
@@ -35,32 +35,19 @@ export class ProductListComponent implements OnInit {
       data: { index: i }
     });
 
-    dialogRef.afterClosed().subscribe(res => {
-      this.color = res;
-    });
+    dialogRef.afterClosed().subscribe(res => {});
     
     
   }
 
   addToWishlist(i) {
 let date = new Date();
-products[i]["addDate"] = date.toLocaleString("en-US", this.options);
+products[i]["addDate"] = date;
 products[i]["nativeIndex"] = i;
 this.cartService.wishItems.unshift(products[i]);
 
 
   }
-
-options = {
-  
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  timezone: 'UTC',
-  hour: 'numeric',
-  minute: 'numeric',
-  second: 'numeric'
-};
 
 }
 

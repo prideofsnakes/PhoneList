@@ -12,18 +12,6 @@ export class AppComponent  {
 
 constructor() { }
 
- 
-
-	 /*openDialog(): void {
-    const dialogRef = this.dialog.open(AppDialogComponent, {
-      width: '250px',
-      data: { name: this.name, color: this.color }
-    });
-
-    dialogRef.afterClosed().subscribe(res => {
-      this.color = res;
-    });
-  }*/
 }
 
 

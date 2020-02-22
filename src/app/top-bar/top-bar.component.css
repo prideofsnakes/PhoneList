@@ -9,6 +9,8 @@ nav {
 a {
 	position: center;
 	padding: 10px 10px;
+	text-decoration: none;
+	color: white;
 }	
 .main {
 	border-right: 1px solid black;

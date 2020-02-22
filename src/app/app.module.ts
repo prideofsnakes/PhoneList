@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductNotificationComponent } from './product-notification/product-notification.component';
+
 
 import { CartService } from './cart.service';
 import { CartPageComponent } from './cart-page/cart-page.component';
@@ -38,7 +38,7 @@ import { WishmenuComponent } from './top-bar/wishmenu/wishmenu.component';
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductNotificationComponent,
+    
     
     CartPageComponent,
     

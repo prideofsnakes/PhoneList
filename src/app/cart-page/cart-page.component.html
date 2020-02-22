@@ -9,7 +9,7 @@
   Количество: <input type ="number" width="25px" [(ngModel)]="item.factor">
   <button mat-button (click) = "itemDelete(index)">Удалить товар</button>
 </div>
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+<form *ngIf = "items.length != 0" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 
   <div>
     <label for="name">
@@ -22,7 +22,7 @@
     <label for="phone">
       Телефон
     </label><br>
-    <input  id="phone" type="text" formControlName="phone">
+    <input id="phone" type="text" formControlName="phone">
   </div>
  
  <div>
@@ -48,5 +48,5 @@
   <button mat-button class="button" type="submit">Сделать заказ</button>
 
 </form>
-<button mat-button (click)="clear()">Очистить корзину</button>
+<button *ngIf = "items.length != 0" mat-button (click)="clear()">Очистить корзину</button>
 <p *ngIf="orderData">{{order | json}}</p>
