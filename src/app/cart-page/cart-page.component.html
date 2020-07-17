@@ -3,12 +3,13 @@
 
 
 <div class='cart-item' *ngFor="let item of items; let i = index;">
-  <img [src]="item.icon" alt="1"><br>
+  <img [src]="item.filepath" alt="Undefined"><br>
   <span>{{item.name}}  стоит   
   ${{item.price}} за шт.</span><br>
   Количество: <input type ="number" width="25px" [(ngModel)]="item.factor">
   <button mat-button (click) = "itemDelete(index)">Удалить товар</button>
 </div>
+
 <form *ngIf = "items.length != 0" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 
   <div>
@@ -49,4 +50,4 @@
 
 </form>
 <button *ngIf = "items.length != 0" mat-button (click)="clear()">Очистить корзину</button>
-<p *ngIf="orderData">{{order | json}}</p>
+

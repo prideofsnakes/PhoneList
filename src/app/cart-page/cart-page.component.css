@@ -1,6 +1,12 @@
+
+
 .cart-item {
 	margin-top: 10px;
 }
 input.ng-invalid{
  border-color: red;
+}
+img {
+	height: 350px;
+	width: 350px;
 }

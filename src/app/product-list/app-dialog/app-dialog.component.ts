@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { CartService } from '../../cart.service';
-import { products } from '../../products';
+
 
 @Component({
   selector: 'app-app-dialog',
@@ -9,9 +9,10 @@ import { products } from '../../products';
   styleUrls: ['./app-dialog.component.css']
 })
 export class AppDialogComponent implements OnInit {
-product = products;
 
-index = this.data.index;
+
+good = this.data.good;
+indToDel = this.data.index;
   constructor(
     public dialogRef: MatDialogRef<AppDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -28,9 +29,10 @@ index = this.data.index;
 
 
 
-  addToCart(product, quantity, index) {
+  addToCart(good, quantity) {
    
-    this.service.addToCart(product, quantity, index);
+    this.service.addToCart(good, quantity);
+    this.service.delElementWishlist(this.indToDel);
      this.dialogRef.close();
   }
 

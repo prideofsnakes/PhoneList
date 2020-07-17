@@ -1,13 +1,13 @@
 
 
 <ul>
-	<li *ngFor = "let product of products; let i=index;">
+	<li *ngFor = "let good of goods;">
 		
-		<img [attr.src]="product.icon" alt="Undefined"><br>
- 		<a>{{ product.name }}</a><br>
-		<p>${{ product.price}}</p>
-		<button mat-button [id]="i" (click) = "openDialog(i)">В корзину</button>
-		<button  mat-button (click) = "addToWishlist(i)"><mat-icon class="hurt material-icons">favorite</mat-icon></button>
+		<img [attr.src]="good.filepath" alt="Undefined"><br>
+ 		<a>{{ good.label }}</a><a> {{good.model}}</a><br>
+		<p>${{ good.price}}</p>
+		<button mat-button  (click) = "openDialog(good)">В корзину</button>
+		<button  mat-button (click) = "addToWishlist(good)"><mat-icon class="hurt material-icons">favorite</mat-icon></button>
 	</li>
 </ul>
 

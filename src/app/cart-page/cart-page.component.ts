@@ -38,9 +38,10 @@ export class CartPageComponent implements OnInit {
  }
     console.warn('Your order has been submitted', customerData);
     this.orderItems = {};
-    this.items.forEach((item, index, arr) => this.orderItems["Товар " + (index + 1)] = item);
+    this.items.forEach((item, index, arr) => this.orderItems["Good #" + (index + 1)] = item);
     this.orderData = customerData;
     this.order = Object.assign(this.orderData,this.orderItems);
+    this.cartService.postJSON(this.order).subscribe();
     this.items = this.cartService.clearCart();
     this.checkoutForm.reset();
   }

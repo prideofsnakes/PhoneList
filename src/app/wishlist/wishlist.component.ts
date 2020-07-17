@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
-import { products } from '../products';
+
 
 import { AppDialogComponent } from '../product-list/app-dialog/app-dialog.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
@@ -26,10 +26,11 @@ export class WishlistComponent implements OnInit {
   	this.service.delElementWishlist(i);
   }
 
-  openDialog(i): void {
-      const dialogRef = this.dialog.open(AppDialogComponent, {
+  openDialog(good, i): void {
+       const dialogRef = this.dialog.open(AppDialogComponent, {
       width: '320px',
-      data: { index: i }
+      data: { good: good,
+              index: i }
     });
 
     dialogRef.afterClosed().subscribe(res => {});

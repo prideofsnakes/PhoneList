@@ -1,7 +1,7 @@
 <div class='cart-item' *ngFor="let item of wishList; let i = index;">
-  <img [src]="item.icon" alt="1"><br>
-  <span>{{item.name}}  стоит   
+  <img [src]="item.iconpath" alt="1"><br>
+  <span>{{item.label}} {{item.model}}  стоит   
   ${{item.price}} за шт.</span><br>
-  <button mat-button (click) = "openDialog(item['nativeIndex'])">Добавить в корзину</button>
+  <button mat-button (click) = "openDialog(item, i)">Добавить в корзину</button>
   <button mat-button (click) = "itemDelete(i)">Удалить товар</button>
 </div>

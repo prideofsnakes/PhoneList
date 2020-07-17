@@ -4,12 +4,10 @@
     </button>
 		
   <mat-menu x-position="before" #menu="matMenu">
-   
+    <p class="empty" *ngIf="wishItems.length == 0">Empty</p> 
     <section mat-menu-item *ngFor="let item of getShortList(wishItems); let i = index">
-    <img [src]="item.preview" alt="">
-    <p>{{item.name}}</p>
-    <p>{{item.addDate | date: "dd.MM.yyyy HH:mm:ss"}}</p>
-	<button mat-button [routerLink]="['/wishlist']">В вишлист</button><br>
-    
-    </section>
+    <img [src]="item.iconpath" alt="">
+    <p>{{item.label}} {{item.model}}</p>
+	  </section>
+  <button *ngIf = "wishItems.length != 0" mat-button [routerLink]="['/wishlist']">В вишлист</button><br>
   </mat-menu>
